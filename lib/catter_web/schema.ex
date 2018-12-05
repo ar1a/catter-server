@@ -1,19 +1,20 @@
 defmodule CatterWeb.Schema do
   use Absinthe.Schema
 
+  def safe_call(func, args) do
+    try do
+      func.(args)
+    rescue
+      _ -> nil
+    end
+  end
+
   query do
     field :mew, :mew do
       arg(:id, non_null(:id))
 
       resolve(fn _, %{id: id}, _ ->
-        mew =
-          try do
-            Catter.Posts.get_mew(id)
-          rescue
-            _ -> nil
-          end
-
-        {:ok, mew}
+        {:ok, safe_call(&Catter.Posts.get_mew/1, id)}
       end)
     end
 
