@@ -36,6 +36,7 @@ defmodule Catter.Posts do
 
   """
   def get_mew!(id), do: Repo.get!(Mew, id)
+  def get_mew(id), do: Repo.get(Mew, id)
 
   @doc """
   Creates a mew.
