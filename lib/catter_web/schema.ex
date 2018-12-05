@@ -2,7 +2,8 @@ defmodule CatterWeb.Schema do
   use Absinthe.Schema
 
   query do
-    field :mew, :mew do
+    # FIXME: doesn't error properly if provided with a malformed UUID
+    field :mew, non_null(:mew) do
       arg(:id, non_null(:id))
 
       resolve(fn _, %{id: id}, _ ->
