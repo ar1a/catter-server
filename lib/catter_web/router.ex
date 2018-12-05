@@ -3,6 +3,7 @@ defmodule CatterWeb.Router do
 
   pipeline :api do
     plug(:accepts, ["json"])
+    plug(CatterWeb.Context)
   end
 
   scope "/api" do
