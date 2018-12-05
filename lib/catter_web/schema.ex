@@ -13,6 +13,10 @@ defmodule CatterWeb.Schema do
         end
       end)
     end
+
+    field :mews, list_of(non_null(:mew)) do
+      resolve(fn _, _, _ -> {:ok, Catter.Posts.list_mews()} end)
+    end
   end
 
   object :mew do
