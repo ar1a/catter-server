@@ -22,6 +22,7 @@ defmodule Catter.Accounts.User do
     |> validate_length(:password, min: 8, max: 150)
     |> validate_format(:email, ~r/@/)
     |> update_change(:email, &String.downcase/1)
+    |> update_change(:username, &String.downcase/1)
     |> unique_constraint(:username)
     |> unique_constraint(:email)
     |> put_password_hash()
