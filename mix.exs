@@ -42,7 +42,10 @@ defmodule Catter.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:absinthe, "~> 1.4.0"},
-      {:absinthe_plug, "~> 1.4.0"}
+      {:absinthe_plug, "~> 1.4.0"},
+      {:comeonin, "~> 4.0"},
+      {:argon2_elixir, "~> 1.2"},
+      {:guardian, "~> 1.0"}
     ]
   end
 
