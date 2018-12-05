@@ -9,3 +9,6 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+Catter.Posts.create_mew(%{content: "Foo"})
+Catter.Posts.create_mew(%{content: "Bar"})
