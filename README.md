@@ -14,7 +14,7 @@ for months, so this is it.
 # The plan
 
 Users will have a username, an optional email, and a password (with argon2).
-Users can create Mews (tweets), which have a content box (240 max) and
+Users can create Mews (tweets), which have a content box (280 max) and
 likes/replies/Remews. Users should be able to follow other users, and there
 should be an endpoint to get their mewfeed, with chronological order.
 
